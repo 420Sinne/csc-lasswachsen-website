@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LassWachsen e.V. – Cannabis Social Club in Gründung | csc-lasswachsen.de</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark:   #1e3a1e;
+      --green-mid:    #2e5c2e;
+      --green-soft:   #4a7c4a;
+      --green-light:  #7aab6a;
+      --green-pale:   #c8dfc0;
+      --green-bg:     #f0f5ec;
+      --cream:        #faf7f0;
+      --cream-mid:    #f0ebe0;
+      --earth:        #8b6f47;
+      --earth-light:  #c4a882;
+      --text-dark:    #1e2a1a;
+      --text-mid:     #3d4e38;
+      --text-soft:    #6b7c64;
+      --text-hint:    #9aab93;
+      --white:        #ffffff;
+      --radius-sm:    6px;
+      --radius-md:    12px;
+      --radius-lg:    20px;
+      --radius-xl:    32px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── NAVIGATION ─────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 247, 240, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--green-pale);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo-leaf {
+      width: 32px;
+      height: 32px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-mid);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--green-soft); }
+
+    .nav-cta {
+      background: var(--green-mid);
+      color: var(--white) !important;
+      padding: 8px 20px;
+      border-radius: 50px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--green-dark) !important; color: var(--white) !important; }
+
+    /* ── HERO ───────────────────────────────────────── */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+      padding: 6rem 2rem 4rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-bg svg {
+      position: absolute;
+      bottom: -20px;
+      right: -60px;
+      width: 55%;
+      max-width: 700px;
+      opacity: 0.13;
+    }
+
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--green-pale) 0%, transparent 70%);
+    }
+    .hero-orb-1 { width: 600px; height: 600px; top: -200px; right: -100px; }
+    .hero-orb-2 { width: 400px; height: 400px; bottom: -100px; left: -80px; }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-bg);
+      border: 1px solid var(--green-pale);
+      color: var(--green-soft);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .badge-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green-light);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--green-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--green-soft);
+    }
+
+    .hero-text {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      margin-bottom: 2.5rem;
+      max-width: 440px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--green-mid);
+      color: var(--white);
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--green-mid);
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1.5px solid var(--green-pale);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--green-soft); color: var(--green-dark); }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--green-pale);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      max-width: 360px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(46, 92, 46, 0.08);
+    }
+
+    .hero-card-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--green-bg);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.2rem;
+      color: var(--green-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-card p {
+      font-size: 0.875rem;
+      color: var(--text-soft);
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      border-top: 1px solid var(--green-pale);
+      padding-top: 1.5rem;
+    }
+
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: 'Fraunces', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--green-soft);
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-hint);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── SECTION BASE ─────────────────────────────── */
+    section { padding: 6rem 2rem; }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--green-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 600;
+      color: var(--green-dark);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      max-width: 560px;
+    }
+
+    /* ── ABOUT ──────────────────────────────────────── */
+    #ueber-uns {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      margin-top: 4rem;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-visual-box {
+      background: var(--green-bg);
+      border-radius: var(--radius-xl);
+      padding: 3rem 2rem;
+      text-align: center;
+      border: 1px solid var(--green-pale);
+    }
+
+    .about-visual-box svg {
+      width: 100%;
+      max-width: 220px;
+      opacity: 0.7;
+    }
+
+    .about-badge-float {
+      position: absolute;
+      bottom: -12px;
+      right: -12px;
+      background: var(--earth);
+      color: var(--cream);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      font-family: 'Fraunces', serif;
+      font-size: 0.95rem;
+      box-shadow: 0 8px 24px rgba(139, 111, 71, 0.25);
+    }
+
+    .about-text h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.4rem;
+      color: var(--green-dark);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    .about-text h3:first-of-type { margin-top: 0; }
+
+    .about-text p {
+      color: var(--text-mid);
+      margin-bottom: 1rem;
+    }
+
+    .legal-box {
+      background: var(--green-bg);
+      border: 1px solid var(--green-pale);
+      border-left: 4px solid var(--green-soft);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .legal-box p {
+      font-size: 0.875rem;
+      color: var(--text-soft);
+      margin: 0;
+    }
+
+    /* ── VORTEILE ───────────────────────────────────── */
+    #vorteile {
+      background: var(--cream);
+    }
+
+    .features-header {
+      max-width: 600px;
+      margin-bottom: 3.5rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border: 1px solid var(--green-pale);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(46, 92, 46, 0.09);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--green-bg);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .feature-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      color: var(--green-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-card p {
+      font-size: 0.875rem;
+      color: var(--text-soft);
+      line-height: 1.65;
+    }
+
+    /* ── ANMELDUNG FORMULAR ─────────────────────────── */
+    #anmeldung {
+      background: var(--green-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #anmeldung::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(74,124,74,0.35) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    #anmeldung .section-label { color: var(--green-light); }
+    #anmeldung .section-title { color: var(--cream); }
+    #anmeldung .section-subtitle { color: var(--green-pale); }
+
+    .form-wrapper {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(200,223,192,0.2);
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      margin-top: 3rem;
+      backdrop-filter: blur(8px);
+      max-width: 780px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group.full { grid-column: 1 / -1; }
+
+    label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--green-pale);
+      letter-spacing: 0.03em;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="tel"],
+    select,
+    textarea {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(200,223,192,0.25);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--cream);
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      width: 100%;
+    }
+
+    input::placeholder,
+    textarea::placeholder { color: rgba(200,223,192,0.4); }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--green-light);
+      background: rgba(255,255,255,0.1);
+    }
+
+    select option {
+      background: var(--green-dark);
+      color: var(--cream);
+    }
+
+    textarea { resize: vertical; min-height: 90px; }
+
+    .form-divider {
+      grid-column: 1 / -1;
+      border: none;
+      border-top: 1px solid rgba(200,223,192,0.15);
+      margin: 0.5rem 0;
+    }
+
+    .form-section-title {
+      grid-column: 1 / -1;
+      font-family: 'Fraunces', serif;
+      font-size: 1rem;
+      color: var(--green-pale);
+      margin-bottom: -0.25rem;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: var(--green-light);
+      cursor: pointer;
+    }
+
+    .checkbox-group span {
+      font-size: 0.82rem;
+      color: var(--green-pale);
+      line-height: 1.6;
+    }
+
+    .checkbox-group a {
+      color: var(--green-light);
+      text-decoration: underline;
+    }
+
+    .form-submit-row {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .btn-submit {
+      background: var(--green-light);
+      color: var(--green-dark);
+      padding: 15px 36px;
+      border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-submit:hover { background: var(--cream); transform: translateY(-1px); }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: rgba(200,223,192,0.5);
+    }
+
+    .success-msg {
+      display: none;
+      background: rgba(122,171,106,0.15);
+      border: 1px solid var(--green-light);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      color: var(--green-pale);
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    /* ── FAQ ─────────────────────────────────────────── */
+    #faq {
+      background: var(--white);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    details {
+      background: var(--cream);
+      border: 1px solid var(--green-pale);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      cursor: pointer;
+    }
+
+    summary {
+      font-weight: 500;
+      color: var(--green-dark);
+      font-size: 0.95rem;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    summary::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--green-light);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after {
+      content: '−';
+    }
+
+    details p {
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────── */
+    footer {
+      background: var(--green-dark);
+      padding: 4rem 2rem 2rem;
+      color: var(--green-pale);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(200,223,192,0.15);
+    }
+
+    .footer-brand h3 {
+      font-family: 'Fraunces', serif;
+      color: var(--cream);
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.75;
+      color: rgba(200,223,192,0.6);
+      max-width: 300px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--green-light);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col a {
+      text-decoration: none;
+      font-size: 0.875rem;
+      color: rgba(200,223,192,0.6);
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: var(--cream); }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: rgba(200,223,192,0.4);
+    }
+
+    .footer-disclaimer {
+      font-size: 0.75rem;
+      color: rgba(200,223,192,0.35);
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(200,223,192,0.1);
+      line-height: 1.6;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-content,
+      .about-grid,
+      .footer-top { grid-template-columns: 1fr; gap: 3rem; }
+
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: 1; }
+      .form-submit-row { grid-column: 1; flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1rem; }
+      .nav-links { display: none; }
+      .features-grid { grid-template-columns: 1fr; }
+      section { padding: 4rem 1.25rem; }
+      .form-wrapper { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ────────────────────────────────── -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <svg class="nav-logo-leaf" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 4C18 4 8 10 8 20C8 26.627 12.477 32 18 32C23.523 32 28 26.627 28 20C28 10 18 4 18 4Z" fill="#4a7c4a" opacity="0.8"/>
+        <path d="M18 32V18" stroke="#2e5c2e" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M18 24L13 19" stroke="#2e5c2e" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M18 20L23 16" stroke="#2e5c2e" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      LassWachsen e.V.
+    </a>
+    <ul class="nav-links">
+      <li><a href="#ueber-uns">Über uns</a></li>
+      <li><a href="#vorteile">Mitgliedschaft</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#anmeldung" class="nav-cta">Voranmelden</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M200 480C200 480 80 380 80 260C80 160 140 80 200 40C260 80 320 160 320 260C320 380 200 480 200 480Z" fill="#2e5c2e"/>
+        <path d="M200 480V220" stroke="#4a7c4a" stroke-width="8" stroke-linecap="round"/>
+        <path d="M200 360C200 360 140 310 100 260" stroke="#4a7c4a" stroke-width="6" stroke-linecap="round"/>
+        <path d="M200 300C200 300 260 250 300 200" stroke="#4a7c4a" stroke-width="6" stroke-linecap="round"/>
+        <path d="M200 420C200 420 150 380 130 340" stroke="#4a7c4a" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text-area">
+        <div class="hero-badge">
+          <div class="badge-dot"></div>
+          Cannabis Social Club · In Gründung
+        </div>
+        <h1>
+          Herzlich Willkommen bei<br>
+          <em>LassWachsen</em>
+        </h1>
+        <p class="hero-text">
+          Wir sind ein Cannabis Social Club in Gründung – eine Gemeinschaft von Menschen,
+          die verantwortungsvollen, legalen Umgang mit Cannabis fördern und leben wollen.
+          Werde Teil von etwas Neuem.
+        </p>
+        <div class="hero-actions">
+          <a href="#anmeldung" class="btn-primary">Jetzt voranmelden</a>
+          <a href="#ueber-uns" class="btn-secondary">Mehr erfahren</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C12 2 5 7 5 13C5 16.866 8.134 20 12 20C15.866 20 19 16.866 19 13C19 7 12 2 12 2Z" stroke="#4a7c4a" stroke-width="1.5" fill="#c8dfc0"/>
+              <path d="M12 20V12" stroke="#2e5c2e" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M12 16L9 13" stroke="#2e5c2e" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M12 14L15 11" stroke="#2e5c2e" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Voranmeldung läuft</h3>
+          <p>Sichere dir deinen Platz in unserer Gemeinschaft. Wir melden uns sobald die Gründung abgeschlossen ist.</p>
+          <div class="stat-row">
+            <div class="stat-item">
+              <span class="stat-num">§</span>
+              <span class="stat-label">KCanG-konform</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">18+</span>
+              <span class="stat-label">Mindestalter</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ÜBER UNS ──────────────────────────────────── -->
+  <section id="ueber-uns">
+    <div class="section-inner">
+      <p class="section-label">Wer wir sind</p>
+      <h2 class="section-title">Ein Verein mit Vision,<br>Werten & Gemeinschaft</h2>
+
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-visual-box">
+            <svg viewBox="0 0 220 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="110" cy="240" rx="70" ry="12" fill="#c8dfc0" opacity="0.4"/>
+              <rect x="100" y="180" width="20" height="60" rx="4" fill="#4a7c4a"/>
+              <path d="M110 180C110 180 60 150 60 100C60 60 82 30 110 10C138 30 160 60 160 100C160 150 110 180 110 180Z" fill="#4a7c4a"/>
+              <path d="M110 180V100" stroke="#7aab6a" stroke-width="4" stroke-linecap="round"/>
+              <path d="M110 150C110 150 80 130 65 110" stroke="#7aab6a" stroke-width="3" stroke-linecap="round"/>
+              <path d="M110 130C110 130 140 110 155 90" stroke="#7aab6a" stroke-width="3" stroke-linecap="round"/>
+              <path d="M110 165C110 165 88 148 80 132" stroke="#7aab6a" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="60" cy="210" r="20" fill="#7aab6a" opacity="0.6"/>
+              <circle cx="160" cy="215" r="15" fill="#4a7c4a" opacity="0.5"/>
+              <circle cx="100" cy="220" r="12" fill="#c8dfc0" opacity="0.7"/>
+            </svg>
+          </div>
+          <div class="about-badge-float">
+            🌱 Gegründet 2025
+          </div>
+        </div>
+
+        <div class="about-text">
+          <h3>Was ist ein Cannabis Social Club?</h3>
+          <p>
+            Ein Cannabis Social Club (CSC) ist ein eingetragener Verein, in dem Mitglieder gemeinschaftlich
+            Cannabis zum Eigenkonsum anbauen und untereinander abgeben dürfen – geregelt durch das
+            Konsumcannabisgesetz (KCanG) seit April 2024.
+          </p>
+
+          <h3>Unsere Mission</h3>
+          <p>
+            Wir wollen einen sicheren, transparenten und respektvollen Rahmen schaffen,
+            in dem Erwachsene verantwortungsvoll mit Cannabis umgehen können.
+            Kein Schwarzmarkt. Keine Ungewissheit. Nur Gemeinschaft und Vertrauen.
+          </p>
+
+          <h3>Wo stehen wir?</h3>
+          <p>
+            LassWachsen e.V. befindet sich aktuell im Gründungsprozess. Die Voranmeldung
+            hilft uns dabei, die Gemeinschaft schon jetzt aufzubauen und alle rechtlichen
+            Anforderungen für die Zulassung zu erfüllen.
+          </p>
+
+          <div class="legal-box">
+            <p>
+              <strong>Rechtlicher Hinweis:</strong> Gemäß KCanG darf ein CSC maximal 500 Mitglieder haben.
+              Mitglieder müssen mindestens 18 Jahre alt und in Deutschland wohnhaft sein.
+              Gleichzeitige Mitgliedschaft in mehreren CSCs ist nicht gestattet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VORTEILE ──────────────────────────────────── -->
+  <section id="vorteile">
+    <div class="section-inner">
+      <div class="features-header">
+        <p class="section-label">Mitgliedschaft</p>
+        <h2 class="section-title">Warum LassWachsen?</h2>
+        <p class="section-subtitle">
+          Wir bauen nicht nur einen Verein – wir bauen eine Gemeinschaft auf gegenseitigem Vertrauen und Respekt.
+        </p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 12L11 14L15 10" stroke="#4a7c4a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 3C7.029 3 3 7.029 3 12C3 16.971 7.029 21 12 21C16.971 21 21 16.971 21 12C21 7.029 16.971 3 12 3Z" stroke="#4a7c4a" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3>100 % legal & sicher</h3>
+          <p>Alle Aktivitäten des Vereins erfolgen im Rahmen des KCanG. Volle Transparenz gegenüber Behörden und Mitgliedern.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M17 21V19C17 17.343 15.657 16 14 16H10C8.343 16 7 17.343 7 19V21" stroke="#4a7c4a" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="12" cy="9" r="4" stroke="#4a7c4a" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3>Echte Gemeinschaft</h3>
+          <p>Keine anonyme Plattform – wir sind ein eingetragener Verein mit echten Menschen, regelmäßigen Treffen und geteilter Verantwortung.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#4a7c4a" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Kontrollierte Qualität</h3>
+          <p>Eigenanbau unter kontrollierten Bedingungen bedeutet bekannte Herkunft, geprüfte Qualität und keine unbekannten Zusatzstoffe.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="11" width="18" height="11" rx="2" stroke="#4a7c4a" stroke-width="1.5"/>
+              <path d="M7 11V7C7 4.791 9.239 3 12 3C14.761 3 17 4.791 17 7V11" stroke="#4a7c4a" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Datenschutz first</h3>
+          <p>Deine Daten werden ausschließlich zur Vereinsverwaltung genutzt und niemals an Dritte weitergegeben. DSGVO-konform.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C8.686 2 6 4.686 6 8C6 10.054 7.054 11.86 8.667 13H15.333C16.946 11.86 18 10.054 18 8C18 4.686 15.314 2 12 2Z" stroke="#4a7c4a" stroke-width="1.5"/>
+              <path d="M9 13V16H15V13" stroke="#4a7c4a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M10 16V19C10 20.105 10.895 21 12 21C13.105 21 14 20.105 14 19V16" stroke="#4a7c4a" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3>Aufklärung & Info</h3>
+          <p>Wir informieren unsere Mitglieder über verantwortungsvollen Konsum, gesundheitliche Aspekte und rechtliche Rahmenbedingungen.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M3 9L12 2L21 9V20C21 20.552 20.552 21 20 21H15V16H9V21H4C3.448 21 3 20.552 3 20V9Z" stroke="#4a7c4a" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Begrenzter Zugang</h3>
+          <p>Max. 500 Mitglieder laut Gesetz – ein exklusiver, persönlicher Rahmen. Wer früh dabei ist, sichert sich seinen Platz.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ANMELDUNG ─────────────────────────────────── -->
+  <section id="anmeldung">
+    <div class="section-inner">
+      <p class="section-label">Mitglied werden</p>
+      <h2 class="section-title">Jetzt voranmelden</h2>
+      <p class="section-subtitle">
+        Trag dich ein und wir kontaktieren dich, sobald der Verein offiziell gegründet ist. Kein Risiko, keine Kosten – nur dein erster Schritt in die Gemeinschaft.
+      </p>
+
+      <div class="form-wrapper">
+        <form id="anmeldeform" action="https://formspree.io/f/info@csc-lasswachsen.de" method="POST">
+
+          <div class="form-grid">
+            <p class="form-section-title">Persönliche Daten</p>
+            <hr class="form-divider">
+
+            <div class="form-group">
+              <label for="vorname">Vorname *</label>
+              <input type="text" id="vorname" name="vorname" placeholder="Max" required />
+            </div>
+
+            <div class="form-group">
+              <label for="nachname">Nachname *</label>
+              <input type="text" id="nachname" name="nachname" placeholder="Mustermann" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-Mail-Adresse *</label>
+              <input type="email" id="email" name="email" placeholder="max@beispiel.de" required />
+            </div>
+
+            <div class="form-group">
+              <label for="telefon">Telefon (optional)</label>
+              <input type="tel" id="telefon" name="telefon" placeholder="+49 123 456789" />
+            </div>
+
+            <div class="form-group">
+              <label for="geburtsdatum">Geburtsdatum *</label>
+              <input type="date" id="geburtsdatum" name="geburtsdatum" required />
+            </div>
+
+            <div class="form-group">
+              <label for="wohnort">Wohnort (Stadt) *</label>
+              <input type="text" id="wohnort" name="wohnort" placeholder="z.B. Berlin" required />
+            </div>
+
+            <hr class="form-divider">
+            <p class="form-section-title">Weitere Angaben</p>
+            <hr class="form-divider">
+
+            <div class="form-group">
+              <label for="mitglied_csc">Sind Sie bereits Mitglied in einem anderen CSC? *</label>
+              <select id="mitglied_csc" name="mitglied_csc" required>
+                <option value="" disabled selected>Bitte wählen...</option>
+                <option value="nein">Nein, bin ich nicht</option>
+                <option value="ja">Ja, bin bereits Mitglied</option>
+                <option value="gekuendigt">Ja, aber ich werde kündigen</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="erfahrung">Erfahrung mit Cannabis</label>
+              <select id="erfahrung" name="erfahrung">
+                <option value="" disabled selected>Bitte wählen...</option>
+                <option value="keine">Keine Erfahrung</option>
+                <option value="gelegentlich">Gelegentlicher Konsument</option>
+                <option value="regelmaessig">Regelmäßiger Konsument</option>
+                <option value="medizinisch">Medizinischer Bedarf</option>
+                <option value="anbau">Anbau-Interesse</option>
+              </select>
+            </div>
+
+            <div class="form-group full">
+              <label for="nachricht">Nachricht / Fragen (optional)</label>
+              <textarea id="nachricht" name="nachricht" placeholder="Hast du Fragen, Anmerkungen oder möchtest du uns etwas mitteilen?"></textarea>
+            </div>
+
+            <hr class="form-divider">
+
+            <div class="form-group full">
+              <label class="checkbox-group">
+                <input type="checkbox" name="datenschutz" required />
+                <span>
+                  Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten
+                  zum Zweck der Vereinsmitgliedschaft einverstanden. *
+                </span>
+              </label>
+            </div>
+
+            <div class="form-group full">
+              <label class="checkbox-group">
+                <input type="checkbox" name="mindestalter" required />
+                <span>
+                  Ich bestätige, dass ich mindestens 18 Jahre alt bin und meinen Hauptwohnsitz in Deutschland habe. *
+                </span>
+              </label>
+            </div>
+
+            <div class="form-group full">
+              <label class="checkbox-group">
+                <input type="checkbox" name="einzigmitglied" required />
+                <span>
+                  Ich bestätige, dass ich bei Vereinsbeitritt in keinem anderen Cannabis Social Club Mitglied sein werde. *
+                </span>
+              </label>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn-submit">Voranmeldung absenden →</button>
+              <span class="form-note">* Pflichtfelder · Keine Mitgliedsgebühren bei Voranmeldung</span>
+            </div>
+          </div>
+
+        </form>
+
+        <div class="success-msg" id="successMsg">
+          ✓ Deine Voranmeldung ist bei uns eingegangen! Wir melden uns bei dir, sobald der Verein offiziell gegründet ist.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ──────────────────────────────────────── -->
+  <section id="faq">
+    <div class="section-inner">
+      <p class="section-label">Häufige Fragen</p>
+      <h2 class="section-title">FAQ</h2>
+
+      <div class="faq-grid">
+
+        <details>
+          <summary>Was kostet die Mitgliedschaft?</summary>
+          <p>Die Höhe des Mitgliedsbeitrags wird im Rahmen der Vereinsgründung festgelegt und rechtzeitig kommuniziert. Die Voranmeldung ist kostenlos und unverbindlich.</p>
+        </details>
+
+        <details>
+          <summary>Wann findet die Vereinsgründung statt?</summary>
+          <p>Wir befinden uns aktuell im Gründungsprozess. Sobald alle rechtlichen Voraussetzungen erfüllt sind und die Zulassung vorliegt, informieren wir alle Vorgemeldeten direkt per E-Mail.</p>
+        </details>
+
+        <details>
+          <summary>Was passiert mit meinen Daten?</summary>
+          <p>Deine Daten werden ausschließlich für die Vereinskommunikation und den Mitgliedschaftsprozess genutzt. Eine Weitergabe an Dritte findet nicht statt. Du kannst der Verarbeitung jederzeit widersprechen.</p>
+        </details>
+
+        <details>
+          <summary>Darf ich in mehreren CSCs Mitglied sein?</summary>
+          <p>Nein. Das Konsumcannabisgesetz (KCanG) verbietet ausdrücklich die gleichzeitige Mitgliedschaft in mehr als einem Cannabis Social Club.</p>
+        </details>
+
+        <details>
+          <summary>Wie viele Mitglieder kann der Verein haben?</summary>
+          <p>Laut KCanG darf ein CSC maximal 500 Mitglieder haben. Daher empfehlen wir eine frühzeitige Voranmeldung, um sich einen der begrenzen Plätze zu sichern.</p>
+        </details>
+
+        <details>
+          <summary>Welche Mengen Cannabis darf ein CSC abgeben?</summary>
+          <p>Mitglieder dürfen bis zu 25 Gramm pro Tag und maximal 50 Gramm pro Monat erhalten. Personen unter 21 Jahren sind auf 30 Gramm pro Monat mit reduziertem THC-Gehalt begrenzt.</p>
+        </details>
+
+        <details>
+          <summary>Muss ich aktiv am Anbau teilnehmen?</summary>
+          <p>Nein, eine aktive Beteiligung am Anbau ist keine Pflicht. Alle Mitglieder können jedoch auf Wunsch eingebunden werden – wir fördern das gemeinschaftliche Engagement.</p>
+        </details>
+
+        <details>
+          <summary>Kann ich die Voranmeldung wieder zurückziehen?</summary>
+          <p>Ja, jederzeit und ohne Angabe von Gründen. Schreib uns einfach eine kurze E-Mail und wir löschen deine Daten unverzüglich.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>LassWachsen e.V.</h3>
+          <p>
+            Cannabis Social Club in Gründung. Wir stehen für verantwortungsvollen,
+            legalen und gemeinschaftlichen Umgang mit Cannabis in Deutschland.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#ueber-uns">Über uns</a></li>
+            <li><a href="#vorteile">Mitgliedschaft</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#anmeldung">Voranmeldung</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="#">Satzung</a></li>
+            <li><a href="mailto:info@csc-lasswachsen.de">Kontakt</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 LassWachsen e.V. – Alle Rechte vorbehalten</p>
+        <p>In Gründung · KCanG-konform</p>
+      </div>
+      <p class="footer-disclaimer">
+        Diese Website dient ausschließlich der Information und Voranmeldung für eine mögliche Vereinsmitgliedschaft.
+        LassWachsen e.V. befindet sich im Gründungsprozess. Alle Inhalte entsprechen dem aktuellen Stand des
+        Konsumcannabisgesetzes (KCanG). Kein Inhalt dieser Website stellt eine Aufforderung zum illegalen Handeln dar.
+        Der Konsum von Cannabis ist ausschließlich volljährigen Personen in Deutschland gestattet.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Formular-Einreichung mit Formspree
+    const form = document.getElementById('anmeldeform');
+    const successMsg = document.getElementById('successMsg');
+
+    // Mindestalter-Check beim Absenden
+    form.addEventListener('submit', function(e) {
+      const geb = new Date(document.getElementById('geburtsdatum').value);
+      const heute = new Date();
+      const alter = heute.getFullYear() - geb.getFullYear() -
+        (heute < new Date(heute.getFullYear(), geb.getMonth(), geb.getDate()) ? 1 : 0);
+
+      if (alter < 18) {
+        e.preventDefault();
+        alert('Du musst mindestens 18 Jahre alt sein, um dich voranmelden zu können.');
+        return;
+      }
+
+      // CSC-Mitgliedschaft prüfen
+      const cscStatus = document.getElementById('mitglied_csc').value;
+      if (cscStatus === 'ja') {
+        e.preventDefault();
+        alert('Laut KCanG ist eine gleichzeitige Mitgliedschaft in mehreren Cannabis Social Clubs nicht erlaubt. Bitte kündige deine bestehende Mitgliedschaft zuerst oder wähle "Ja, aber ich werde kündigen".');
+        return;
+      }
+    });
+
+    // Formspree AJAX-Submit (optional, für bessere UX)
+    form.addEventListener('submit', async function(e) {
+      const action = form.getAttribute('action');
+      if (!action.includes('formspree.io')) return;
+
+      e.preventDefault();
+      const data = new FormData(form);
+
+      try {
+        const resp = await fetch(action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (resp.ok) {
+          form.style.display = 'none';
+          successMsg.style.display = 'block';
+        }
+      } catch(err) {
+        // Fallback: normales Submit
+        form.submit();
+      }
+    });
+
+    // Smooth Scroll für Nav-Links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
